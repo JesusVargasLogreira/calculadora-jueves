@@ -1,0 +1,117 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #7c5cff;
+  --muted: #94a3b8;
+  --btn: #111827;
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-family: "PT Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #07102a 0%, #0b1220 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: #e6eef8;
+}
+
+.calculator {
+  width: 360px;
+  max-width: calc(100% - 48px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.display {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 -6px 24px rgba(0, 0, 0, 0.6);
+}
+
+#display {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 28px;
+  text-align: right;
+  padding: 8px 6px;
+  caret-color: transparent;
+}
+
+/* botones */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 18px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform .08s ease, box-shadow .08s ease;
+  user-select: none;
+  color: #e6eef8;
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.6);
+}
+
+.btn:active {
+  transform: translateY(2px)
+}
+
+.btn.operator {
+  background: linear-gradient(180deg, rgba(124, 92, 255, 0.15), rgba(124, 92, 255, 0.08));
+  border: 1px solid rgba(124, 92, 255, 0.18);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-ac {
+  background: linear-gradient(180deg, rgba(255, 80, 80, 0.12), rgba(255, 80, 80, 0.06));
+  border: 1px solid rgba(255, 80, 80, 0.14);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-equals {
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.06));
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  font-weight: 700;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+@media (max-width:420px) {
+  .btn {
+    padding: 14px;
+    font-size: 16px
+  }
+
+  #display {
+    font-size: 22px
+  }
+}
